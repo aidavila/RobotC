@@ -1,0 +1,50 @@
+
+}
+
+task main()
+{
+	autonomousX = 1;
+	startTask( userControl );
+	startTask( autonomous );
+	repeat (forever)
+	{
+		waitUntil(vexRT[Btn5D] == 1); //figure out what button
+		{
+			if(autonomousX == 1) //latch figures out what the variable is and switches it
+			{
+				autonomousX = 0;
+				} else {
+		int autonomousX;
+
+#include "BEST_Function_Library.h"
+
+task userControl()//user controlled period code
+{
+	while(autonomousX == 1) // 1=usercontrol, 0=autonomous
+	{
+		//left side
+
+		//right side
+		joystickControl(1,2,10); //port controlled, joystick to control, deadband
+		joystickControl(2,2,10); //set to the same joystick as^^ but other wheel on same side
+
+		//left side
+		joystickControl(3,1,10); //port controlled, joystick to control, deadband
+		joystickControl(4,1,10); //set to the same joystick as^^ but other wheel on same side
+	}
+
+}
+
+
+task autonomous()//autonomous period code
+{
+	if(autonomousX == 0)
+	{
+
+	}
+		autonomousX = 1;
+			}
+			wait(1, seconds); // delay to prevent loop from repeating
+		}
+	}
+}
